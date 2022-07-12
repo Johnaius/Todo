@@ -6,11 +6,11 @@ const todoTaskSchema = new mongoose.Schema({
     },
     content: {
         type: String,
-        require: true
-        
+        require: true     
     },
     date: {
         type: Date,
         deafult: Date.now
     }
 })
+module.exports = mongoose.model("TodoTask", todoTaskSchema, 'Tasks')
