@@ -10,7 +10,7 @@ const todoTaskSchema = new mongoose.Schema({
     },
     date: {
         type: Date,
-        deafult: Date.now
+        default: Date.now
     }
 })
-module.exports = mongoose.model("TodoTask", todoTaskSchema, 'Tasks')
+module.exports = mongoose.model("TodoTask", todoTaskSchema, 'tasks')
