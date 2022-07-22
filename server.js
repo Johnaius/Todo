@@ -45,5 +45,11 @@ app.post('/', async (req, res) => {
         res.redirect("/");
     }
 });
+
+//EDIT OR UPDATE METHOD
+app
+    .route("/edit/:id")
+    
+
 //Setting up port
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
