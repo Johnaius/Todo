@@ -53,7 +53,7 @@ app
         const id = req.params.id
         TodoTask.find({}, (err,tasks) => {
             res.render('edit.ejs', {
-                todoTasks:tasks, idTask: id})
+                todoTasks: tasks, idTask: id})
     })
         })
         .post((req,res) =>{
@@ -71,6 +71,16 @@ app
             )
         })
     
+//DELETE
+app
+        .route("/remove/:id")
+        .get((req,res)=> {
+            const id = req.params.id
+            TodoTask.findByIdAndRemove(id, err=> {
+                if (err) return res.status(500).sebd(err)
+                res.redirect('/')
+            })
+        })
 
 //Setting up port
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
